@@ -1,0 +1,27 @@
+CREATE TABLE users (
+    [user_id] INTEGER,
+    username TEXT,
+    points INTEGER
+):
+
+CREATE TABLE workouts (
+    workout_id INTEGER,
+    [user_id] INTEGER,
+    type_of_exercise TEXT,
+    reps INTEGER,
+    time_spent INTEGER,
+    [date] INTEGER,
+);
+
+CREATE TABLE challenges (
+    challenge_id INTEGER,
+    [user_id] INTEGER,
+    score INTEGER
+);
+
+-- 'JOIN' 'ON' used for multi table lookup/combining
+
+SELECT *
+FROM workouts
+JOIN users
+    ON workouts.user_id = users.user_id;
